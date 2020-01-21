@@ -1,4 +1,3 @@
-
 ## Stacks
 
 A stack stores items in a last-in, first-out (LIFO) order.
