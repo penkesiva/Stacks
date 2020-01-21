@@ -1,11 +1,3 @@
----
----
-
-@import "{{ site.theme }}";
-
-.inner {
-  max-width: 75%;
-}
 
 ## Stacks
 
