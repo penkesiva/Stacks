@@ -7,7 +7,7 @@ Picture a pile of dirty plates in your sink. As you add more plates, you bury th
 ![](assets/stack1.gif)
 
 ## Strengths:
-Fast operations. All stack operations take O(1)O(1) time.
+Fast operations. All stack operations take O(1) time.
 
 ## Uses:
 The call stack is a stack that tracks function calls in a program. When a function returns, which function do we "pop" back to? The last one that "pushed" a function call.
@@ -15,14 +15,16 @@ Depth-first search uses a stack (sometimes the call stack) to keep track of whic
 String parsing—stacks turn out to be useful for several types of string parsing.
 
 
-## Implement a queue ↴ with 2 stacks. ↴ Your queue should have an enqueue and a dequeue method and it should be "first in first out" (FIFO).
+## Lets solve a programming question 
+
+#### _Implement a queue ↴ with 2 stacks. ↴ Your queue should have an enqueue and a dequeue method and it should be "first in first out" (FIFO).
 
 Optimize for the time cost of mm calls on your queue. These can be any mix of enqueue and dequeue calls.
 
-Assume you already have a stack implementation and it gives O(1)O(1) time push and pop.
+Assume you already have a stack implementation and it gives O(1) time push and pop.
 
 ## Gotcha
-We can get O(m)O(m) runtime for mm calls. Crazy, right?
+We can get O(m) runtime for mm calls. Crazy, right?
 
 ## Breakdown
 Let's call our stacks stack1 and stack2.
@@ -35,9 +37,9 @@ More explanation here
 
 This is a complete solution. But we can do better.
 
-What's our time complexity for mm operations? At any given point we have O(m)O(m) items inside our data structure, and if we dequeue we have to move all of them from stack1 to stack2 and back again. One dequeue operation thus costs O(m). The number of dequeues is O(m), so our worst-case runtime for these mm operations is O(m^2).
+What's our time complexity for mm operations? At any given point we have O(m) items inside our data structure, and if we dequeue we have to move all of them from stack1 to stack2 and back again. One dequeue operation thus costs O(m). The number of dequeues is O(m), so our worst-case runtime for these mm operations is O(m^2).
 
-Not convinced we can have O(m)O(m) dequeues and also have each one deal with O(m)O(m) items in the data structure? What if our first .5m.5m operations are enqueues, and the second .5m.5m are alternating enqueues and dequeues. For each of our .25m.25m dequeues, we have .5m.5m items in the data structure.
+Not convinced we can have O(m) dequeues and also have each one deal with O(m) items in the data structure? What if our first .5m operations are enqueues, and the second .5m are alternating enqueues and dequeues. For each of our .25m dequeues, we have .5m items in the data structure.
 
 We can do better than this O(m^2) runtime.
 
